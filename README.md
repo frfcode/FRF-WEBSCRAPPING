@@ -14,7 +14,8 @@
 
 Download project and use the next command:
 
-`npm i`
+<!-- prettier-ignore -->
+```npm i```
 
 in the folder src/utils have a file with the name **kit.js**, this file have all functions for web scraping.
 in the folder src/scraping have all code for generate results of scraping.
