@@ -10,6 +10,42 @@
 - Puppeteer
 - Cheerio
 
+## COMMANDS
+
+init dev server
+
+```
+npm run dev
+```
+
+run scraping news with wthr
+
+```
+npm run news
+```
+
+run scraping indeed
+
+```
+npm run indeed
+```
+
+run scraping airbnb
+
+```
+npm run airbnb
+```
+
+run scraping google-events
+
+```
+npm run google-events
+```
+
+```
+npm run espn-sports
+```
+
 ## INSTRUCTIONS
 
 Download project and use the next command:
