@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FRF-WEBSCRAPPING</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="text-kanit text-center title">Web Scraping Generator</h1>
+    <% if (status == 1) { %>
+    <p class="message message-success text-kanit"><%= message %></p>
+    <% } %> <% if (status == -1) { %>
+    <p class="message message-danger text-kanit"><%= message %></p>
+    <% } %>
+    <div class="disabled" id="status"><p class="text-kanit">Loading... <div class="spinner"></div></p></div>
+    <div class="links-scraping text-center" class="text-kanit">
+      <a href="/web-scraping/espn-sports" class="text-kanit">espn sports</a>
+      <a href="/web-scraping/indeed" class="text-kanit">indeed</a>
+      <a href="/web-scraping/google-events" class="text-kanit">google events</a>
+      <a href="/web-scraping/airbnb" class="text-kanit">airbnb</a>
+      <a href="/web-scraping/wthr" class="text-kanit">news wthr</a>
+    </div>
+
+    <script>
+      let status = document.getElementById("status");
+      let getAllLinks = document.querySelectorAll("a");
+      getAllLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          status.classList.remove("disabled");
+          status.classList.add("loading");
+        });
+      });
+    </script>
+  </body>
+</html>
