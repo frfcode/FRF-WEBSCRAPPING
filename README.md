@@ -9,6 +9,8 @@
 - CSS
 - Puppeteer
 - Cheerio
+- Nodemon
+- Ejs
 
 ## COMMANDS
 
