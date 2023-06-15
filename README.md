@@ -44,6 +44,8 @@ run scraping google-events
 npm run google-events
 ```
 
+run scraping espn sports
+
 ```
 npm run espn-sports
 ```
