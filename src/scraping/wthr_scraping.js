@@ -12,9 +12,10 @@ async function wthr() {
     //LOAD DATA OF DOCUMENT INDEX.HTML
     const $ = await load(getUrlContent);
     let objPost = [];
-    $(
+    let searchPost = $(
       "div.grid__main .grid__cell_columns_1 .grid__module .grid__module-sizer_name_headline-list .headline-list ul li"
-    ).each(async (index, el) => {
+    );
+    searchPost.each(async (index, el) => {
       //GET ACTUALLY POST URL
       let getPostHref = await $(el).find("a").attr("href");
 
@@ -71,7 +72,9 @@ async function wthr() {
         post_video: getPostVideo,
       });
 
-      await createOutputFile("wthr_posts.json", objPost);
+      if (searchPost.length == index + 1) {
+        await createOutputFile("wthr_posts.json", objPost);
+      }
     });
     console.log("wthr scraping finalizado");
   } catch (error) {

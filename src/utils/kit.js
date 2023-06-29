@@ -19,16 +19,18 @@ async function createOutputFile(filename, data, outputDir = "output") {
     });
   } else {
     let getFileData = fs.readFileSync(outputFile, {
-      encoding: "utf8",
-      flag: "r",
+        encoding: "utf-8",
+        flag: "r",
     });
     //INCLUDE NEW DATA
     let createNewData = JSON.parse(getFileData);
-    createNewData.push(data);
+    for (const [index, oldPost] of createNewData.entries()) {
+        data.push(oldPost);
+    }
     //WRITE AND OUTPUT DATA
-    fs.writeFileSync(outputFile, JSON.stringify(createNewData), {
-      encoding: "utf-8",
-      flag: "w",
+    fs.writeFileSync(outputFile, JSON.stringify(data), {
+        encoding: "utf-8",
+        flag: "w",
     });
   }
 }
